@@ -1,0 +1,64 @@
+/******************************************************************
+STYLESHEET: VARIABLES
+
+    > COLORS
+    > FONTS
+    > BREAKPOINTS
+    > MARGINS_TEXT
+    > MARGINS_BOX
+
+This is the place for all variables.
+******************************************************************/
+
+/******************************************************************
+COLORS
+******************************************************************/
+$black:      #272b2f;
+$grey:       #d9d9dd;
+$grey_dark:  #42424a;
+$grey_light: #f5f5f9;
+$white:      #fff;
+
+$c_dark:   $black;
+$c_medium: $grey_light;
+$c_light:  $white;
+
+$c_base: $black;
+
+
+/******************************************************************
+FONTS
+******************************************************************/
+$opensans:     'Open Sans', 'Helvetica', 'Arial', sans-serif;
+$merriweather: 'Merriweather', 'Times New Roman', serif;
+
+$f_base:    $merriweather;
+$f_heading: $opensans;
+$f_link:    $opensans;
+$f_text:    $merriweather;
+
+
+/******************************************************************
+BREAKPOINTS
+******************************************************************/
+$w_small:  681px;
+$w_medium: 961px;
+$w_large:  1361px;
+
+
+/******************************************************************
+MARGINS_TEXT
+This uses 'em' units to target the parent fontsize.
+******************************************************************/
+$m_text_small:  0.5em;
+$m_text_medium: 1em;
+$m_text_large:  1.5em;
+
+
+/******************************************************************
+MARGINS_BOX
+This uses 'rem' units to target the base fontsize.
+******************************************************************/
+$m_box_small:  0.5rem;
+$m_box_medium: 2rem;
+$m_box_large:  5rem;

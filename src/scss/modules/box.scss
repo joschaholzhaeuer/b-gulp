@@ -1,0 +1,22 @@
+/******************************************************************
+STYLESHEET: BOX
+
+******************************************************************/
+
+.box {
+    text-align: center;
+    background-color: $c_medium;
+    margin: $m_box_medium auto;
+    padding: $m_box_medium;
+    width: 90%;
+
+    @include small {
+        width: 70%;
+        margin: $m_box_large auto;
+        padding: $m_box_large;
+    }
+
+    @include medium {
+        width: 50%;
+    }
+}
