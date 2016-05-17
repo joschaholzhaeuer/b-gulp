@@ -10,7 +10,13 @@ The `src` folder is for **development** only, where you can find all of the SCSS
 
 The `dist` folder is the one you upload on a server when **deploying** your project. Here are all minified and compressed files and images, automatically created by Gulp. This folder is empty by default - the minified files will be created by Gulp.
 
-### Installing Gulp
+### Install Bower
+
+1. Install bower globally for all projects: `npm install -g bower`
+
+2. Install bower packages: `bower install`
+
+### Install Gulp
 
 1. Install gulp globally for all projects: `npm install -g gulp`
 

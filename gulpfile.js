@@ -79,18 +79,21 @@ gulp.task('minify', function() {
 });
 
 // Static Server
-gulp.task('serve', function() {
+/*gulp.task('serve', function() {
     browserSync.init({
         server: "./dist"
     });
-});
+});*/
 
 // Watch Files For Changes
 gulp.task('watch', function() {
-    gulp.watch('js/*.js', ['lint', 'scripts']).on('change', browserSync.reload);
-    gulp.watch('src/scss/**/*.scss', ['sass', 'css']).on('change', browserSync.reload);
-    gulp.watch('src/*.html', ['minify']).on('change', browserSync.reload);
+    browserSync.init({
+      proxy: 'localhost/gulp_boilerplate/dist/'
+    });
+    gulp.watch('src/js/*.js', ['lint', 'scripts']);
+    gulp.watch('src/scss/**/*.scss', ['sass', 'css']);
+    gulp.watch('src/*.html', ['minify']);
 });
 
 // Default Tasks
-gulp.task('default', ['lint', 'sass', 'css', 'scripts', 'minify', 'watch', 'serve']);
+gulp.task('default', ['lint', 'sass', 'css', 'scripts', 'minify', 'watch']);
