@@ -8,7 +8,7 @@ This is a very basic boilerplate to get started with. It includes a specific **f
 
 The `src` folder is for **development** only, where you can find all of the SCSS code, uncompressed JavaScript and uncompressed images or placeholders used for development.
 
-The `dist` folder is the one you upload on a server when **deploying** your project. Here are all minified and compressed files and images, automatically created by Gulp.
+The `dist` folder is the one you upload on a server when **deploying** your project. Here are all minified and compressed files and images, automatically created by Gulp. This folder is empty by default - the minified files will be created by Gulp.
 
 ### Installing Gulp
 
