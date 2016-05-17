@@ -4,11 +4,13 @@ STYLESHEET: BOX
 ******************************************************************/
 
 .box {
-    text-align: center;
-    background-color: $c_medium;
+    width: 90%;
+    color: $c_light;
+    background-color: $c_base;
     margin: $m_box_medium auto;
     padding: $m_box_medium;
-    width: 90%;
+    border-radius: 5px;
+    text-align: center;
 
     @include small {
         width: 70%;

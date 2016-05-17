@@ -15,7 +15,7 @@ html {
 
 body {
     font-family: $f_base;
-    color: $c_base;
+    color: $c_dark;
 }
 
 *,
@@ -25,12 +25,12 @@ body {
 }
 
 ::-moz-selection {
-    background: #b3d4fc;
+    background: $c_accent;
     text-shadow: none;
 }
 
 ::selection {
-    background: #b3d4fc;
+    background: $c_accent;
     text-shadow: none;
 }
 

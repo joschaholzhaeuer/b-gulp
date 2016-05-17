@@ -78,7 +78,7 @@ gulp.task('minify', function() {
         .pipe(gulp.dest('dist'));
 });
 
-// Static Server & Watching SCSS/HTML Files
+// Static Server
 gulp.task('serve', function() {
     browserSync.init({
         server: "./dist"
@@ -87,7 +87,7 @@ gulp.task('serve', function() {
 
 // Watch Files For Changes
 gulp.task('watch', function() {
-    gulp.watch('js/*.js', ['lint', 'scripts']);
+    gulp.watch('js/*.js', ['lint', 'scripts']).on('change', browserSync.reload);
     gulp.watch('src/scss/**/*.scss', ['sass', 'css']).on('change', browserSync.reload);
     gulp.watch('src/*.html', ['minify']).on('change', browserSync.reload);
 });
