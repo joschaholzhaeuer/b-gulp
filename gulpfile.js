@@ -10,10 +10,12 @@ var rename       = require('gulp-rename');
 var htmlmin      = require('gulp-htmlmin');
 var sourcemaps   = require('gulp-sourcemaps');
 var postcss      = require('gulp-postcss');
+var imagemin     = require('gulp-imagemin');
 var autoprefixer = require('autoprefixer');
 var pixrem       = require('pixrem');
 var cssnano      = require('cssnano');
 var browserSync  = require('browser-sync').create();
+
 
 // Lint JS-Files
 gulp.task('lint', function() {
@@ -35,7 +37,7 @@ gulp.task('scripts', function() {
 });
 
 // Compile Sass
-gulp.task('sass', function() {
+gulp.task('sass', ['bower'], function() {
     return gulp
         .src('src/scss/style.scss')
         .pipe(sourcemaps.init())
@@ -48,12 +50,21 @@ gulp.task('sass', function() {
         .pipe(browserSync.stream());
 });
 
+// Wire Bower Dependencies into SCSS
+gulp.task('bower', function () {
+    var wiredep = require('wiredep').stream;
+    return gulp
+        .src('src/scss/style.scss')
+        .pipe(wiredep())
+        .pipe(gulp.dest('src/scss/'));
+});
+
 // Minify & Autoprefix CSS
 gulp.task('css', function () {
     var processors = [
         pixrem(),
         autoprefixer({
-            browsers: ['last 6 versions']
+            browsers: ['last 4 versions', 'android 4', 'opera 12']
         }),
         cssnano(),
     ];
@@ -78,12 +89,13 @@ gulp.task('minify', function() {
         .pipe(gulp.dest('dist'));
 });
 
-// Static Server
-/*gulp.task('serve', function() {
-    browserSync.init({
-        server: "./dist"
-    });
-});*/
+// Compress Images
+gulp.task('imagemin', function() {
+    return gulp
+        .src('src/img/*')
+        .pipe(imagemin())
+        .pipe(gulp.dest('dist/img'));
+});
 
 // Watch Files For Changes
 gulp.task('watch', function() {
@@ -96,4 +108,4 @@ gulp.task('watch', function() {
 });
 
 // Default Tasks
-gulp.task('default', ['lint', 'sass', 'css', 'scripts', 'minify', 'watch']);
+gulp.task('default', ['lint', 'sass', 'css', 'scripts', 'minify', 'imagemin', 'watch']);

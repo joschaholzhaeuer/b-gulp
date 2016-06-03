@@ -4,11 +4,14 @@ STYLESHEET: STYLE
 This is the place where all scss files get imported.
 ******************************************************************/
 
+// Automatically injected Bower dependencies via wiredep (never manually edit this block)
+// bower:scss
+@import "../../bower_components/susy/sass/_susy.scss";
+// endbower
+
 // Includes
 @import "includes/normalize";
 @import "includes/print";
-@import "../../bower_components/susy/sass/susy";
-@import "../../bower_components/font-awesome/scss/font-awesome.scss";
 
 // Settings
 @import "settings/typography";
@@ -19,10 +22,10 @@ This is the place where all scss files get imported.
 @import "tools/placeholders";
 
 // Layout
-@import "layout/grid.scss";
-@import "layout/content.scss";
-@import "layout/header.scss";
-@import "layout/footer.scss";
+@import "layout/grid";
+@import "layout/content";
+@import "layout/header";
+@import "layout/footer";
 
 // Base
 @import "base/defaults";
