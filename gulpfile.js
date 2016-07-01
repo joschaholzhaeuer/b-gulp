@@ -71,9 +71,6 @@ gulp.task('css', function () {
     return gulp
         .src('dist/css/style.css')
         .pipe(postcss(processors))
-        .pipe(sass({
-            outputStyle: 'compressed'
-        }))
         .pipe(rename('style.min.css'))
         .pipe(gulp.dest('dist/css/'));
 });
