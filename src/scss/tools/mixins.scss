@@ -3,18 +3,17 @@ STYLESHEET: MIXINS
 
     > BREAKPOINTS
     > KEYFRAMES
-    > HORIZONTALLY_CENTER_BLOCK_ELEMENTS
-    > HORIZONTALLY_AND_VERTICALLY_CENTER_BLOCK_ELEMENTS
-    > VERTICALLY_CENTER_BLOCK_ELEMENTS_KNOWN_HEIGHT
-    > VERTICALLY_CENTER_BLOCK_ELEMENTS_UNKNOWN_HEIGHT
+    > HORIZONTALLY_AND_VERTICALLY_CENTER_ABSOLUTE_BLOCK_ELEMENTS
+    > VERTICALLY_CENTER_RELATIVE_BLOCK_ELEMENTS
     > CLEARFIX
 
 ******************************************************************/
 
 
+
 /******************************************************************
-BREAKPOINTS
---> @include medium {...}
+    BREAKPOINTS
+        --> @include medium {...}
 ******************************************************************/
 
 @mixin small {
@@ -38,8 +37,8 @@ BREAKPOINTS
 
 
 /******************************************************************
-KEYFRAMES
---> @include keyframes($name) {...}
+    KEYFRAMES
+        --> @include keyframes($name) {...}
 ******************************************************************/
 
 @mixin keyframes($name) {
@@ -55,62 +54,8 @@ KEYFRAMES
 
 
 /******************************************************************
-HORIZONTALLY_CENTER_BLOCK_ELEMENTS
---> @include center-block;
-******************************************************************/
-
-@mixin center-block {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-
-
-/******************************************************************
-HORIZONTALLY_AND_VERTICALLY_CENTER_BLOCK_ELEMENTS
---> @include center-both;
-******************************************************************/
-
-@mixin center-both {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    @include prefix(transform, translate(-50%, -50%), 'webkit' 'ms');
-}
-
-
-
-/******************************************************************
-VERTICALLY_CENTER_BLOCK_ELEMENTS_KNOWN_HEIGHT
---> @include center-h(40px);
-******************************************************************/
-
-@mixin center-h($height) {
-    position: absolute;
-    top: 50%;
-    height: $height;
-    margin-top: -($height / 2);
-}
-
-
-
-/******************************************************************
-VERTICALLY_CENTER_BLOCK_ELEMENTS_UNKNOWN_HEIGHT
---> @include center-h-unknown;
-******************************************************************/
-
-@mixin center-h-unknown {
-    position: relative;
-    top: 50%;
-    @include prefix(transform, translateY(-50%), 'webkit' 'ms');
-}
-
-
-
-/******************************************************************
-CLEARFIX
---> @include clearfix;
+    CLEARFIX
+        --> @include clearfix;
 ******************************************************************/
 
 @mixin clearfix {
